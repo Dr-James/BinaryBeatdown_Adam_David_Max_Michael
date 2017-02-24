@@ -12,11 +12,9 @@ public class CharacterTester {
     private CharacterCreator createPaul() {
         String name = "Paul";
         String intro = "I am Paul!";
-        String attribute = "Algorithms";
         int health = 150;
-        int speed = 50;
         Move[] moveSet = {new Move(), new Move(), new Move(), new Move()};
-        return new CharacterCreator(name, intro, attribute, health, speed, moveSet);
+        return new CharacterCreator(name, intro, health, moveSet);
     }
 
     @Test
@@ -29,19 +27,15 @@ public class CharacterTester {
         Assert.assertEquals("", nullCharacter.getIntro());
     }
 
-    @Test
-    public void characterNoAttributeTester() {
-        Assert.assertEquals("", nullCharacter.getAttribute());
-    }
 
     @Test
     public void characterNoStatsTester() {
-        Assert.assertEquals("Health: 0 Speed: 0", nullCharacter.getStats());
+        Assert.assertEquals(0, nullCharacter.getHealth());
     }
 
     @Test
-    public void characterNoMoveSetTester() {
-        Assert.assertEquals("Moves: Nothing, Nothing, Nothing, Nothing", nullCharacter.getMoveSet());
+    public void characterNoMoveSetIndex0Tester() {
+        Assert.assertEquals("Nothing", nullCharacter.getMoveSet()[0].getMoveName());
     }
 
     @Test
@@ -54,14 +48,10 @@ public class CharacterTester {
         Assert.assertEquals("I am Paul!", createPaul().getIntro());
     }
 
-    @Test
-    public void paulAttributeTester() {
-        Assert.assertEquals("Algorithms", createPaul().getAttribute());
-    }
 
     @Test
     public void paulStatsTester() {
-        Assert.assertEquals("Health: 150 Speed: 50", createPaul().getStats());
+        Assert.assertEquals(150, createPaul().getHealth());
     }
 
     @Test
@@ -70,13 +60,17 @@ public class CharacterTester {
     }
 
     @Test
-    public void generateOpponentArrayTester() {
+    public void generateOpponentArrayIndex0Tester() {
         CharacterCreator[] arrayOfCharacters = generateOpponentArray();
-        CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator Michael = new CharacterCreator("Michael", "I'm Michael!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", 100, new Move[]{new Move(), new Move(), new Move(), new Move()});
         Assert.assertEquals(Adam.getName(), arrayOfCharacters[0].getName());
+    }
+
+    @Test
+    public void generateOpponentArrayIndex3Tester() {
+        CharacterCreator[] arrayOfCharacters = generateOpponentArray();
+        CharacterCreator Michael = new CharacterCreator("Michael", "I'm Michael!", 100, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        Assert.assertEquals(Michael.getName(), arrayOfCharacters[3].getName());
     }
 
 

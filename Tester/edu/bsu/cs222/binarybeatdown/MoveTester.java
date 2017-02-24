@@ -3,10 +3,12 @@ package edu.bsu.cs222.binarybeatdown;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static edu.bsu.cs222.binarybeatdown.Move.generateMoveArray;
+
 public class MoveTester {
 
     private Move nullMove = new Move();
-    private Move basicMove = new Move("Basic", "This is a basic attack!", "Hit", 10, 95);
+    private Move basicMove = new Move("Basic", "This is a basic attack!", 10, 95);
 
     @Test
     public void nullMoveNameTester() {
@@ -15,12 +17,7 @@ public class MoveTester {
 
     @Test
     public void nullMoveDefinitionTester() {
-        Assert.assertEquals("This move does nothing!", nullMove.getMoveDefintion());
-    }
-
-    @Test
-    public void nullMoveAttributeTester() {
-        Assert.assertEquals("Lazy", nullMove.getMoveAttribute());
+        Assert.assertEquals("This move does nothing!", nullMove.getMoveDefinition());
     }
 
     @Test
@@ -40,12 +37,7 @@ public class MoveTester {
 
     @Test
     public void basicMoveDefinitionTester() {
-        Assert.assertEquals("This is a basic attack!", basicMove.getMoveDefintion());
-    }
-
-    @Test
-    public void basicMoveAttributeTester() {
-        Assert.assertEquals("Hit", basicMove.getMoveAttribute());
+        Assert.assertEquals("This is a basic attack!", basicMove.getMoveDefinition());
     }
 
     @Test
@@ -57,6 +49,16 @@ public class MoveTester {
     public void basicMoveDamageTester() {
         Assert.assertEquals(95, basicMove.getMoveDamage());
     }
+
+//    @Test
+//    public void moveArrayTester() {
+//        Move basicAdam = new Move();
+//        Move basicDavid = new Move();
+//        Move meh = new Move();
+//        Move die = new Move();
+//        Move[] moveSet= new Move[]{basicAdam, basicDavid, meh, die};
+//        Assert.assertArrayEquals(moveSet, generateMoveArray());
+//    }
 
 
 

@@ -1,10 +1,7 @@
 package edu.bsu.cs222.binarybeatdown;
 
-import java.text.ParseException;
-
 public class Move {
 
-    private String attribute;
     private String definition;
     private String moveName;
     private int hitChance;
@@ -13,15 +10,13 @@ public class Move {
     public Move() {
         this.moveName = "Nothing";
         this.definition = "This move does nothing!";
-        this.attribute = "Lazy";
         this.hitChance = 0;
         this.damage = 0;
     }
 
-    public Move(String moveName, String moveDefinition, String moveAttribute, int moveHitChance, int moveDamage) {
+    public Move(String moveName, String moveDefinition, int moveHitChance, int moveDamage) {
         this.moveName = moveName;
         this.definition = moveDefinition;
-        this.attribute = moveAttribute;
         this.hitChance = moveHitChance;
         this.damage = moveDamage;
     }
@@ -30,13 +25,10 @@ public class Move {
         return this.moveName;
     }
 
-    public String getMoveDefintion() {
+    public String getMoveDefinition() {
         return this.definition;
     }
 
-    public String getMoveAttribute() {
-        return this.attribute;
-    }
 
     public int getMoveHitChance() {
         return this.hitChance;
@@ -44,6 +36,20 @@ public class Move {
 
     public int getMoveDamage() {
         return this.damage;
+    }
+
+//    public static Move[] generateMoveArray() {
+//        Move basicAdam = new Move();
+//        Move basicDavid = new Move();
+//        Move meh = new Move();
+//        Move die = new Move();
+//        return new Move[]{basicAdam, basicDavid, meh, die};
+//    }
+    public String toString(Move[] moveSet) {
+        String listOfMoves = "";
+        for (Move move: moveSet)
+            listOfMoves += move.getMoveName() + " ";
+        return listOfMoves;
     }
 
 }
