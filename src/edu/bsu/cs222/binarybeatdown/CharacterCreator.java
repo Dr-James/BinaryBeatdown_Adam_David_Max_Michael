@@ -1,7 +1,6 @@
 package edu.bsu.cs222.binarybeatdown;
 
-import java.util.ArrayList;
-
+import edu.bsu.cs222.binarybeatdown.Battle;
 public class CharacterCreator {
 
     private String intro;
@@ -33,6 +32,21 @@ public class CharacterCreator {
         return new CharacterCreator[]{Adam, David, Max, Michael};
     }
 
+    public CharacterCreator initializeDave() {
+        String name = "Dave";
+        String definition = "I'm Professor Dave Largent, champion of clean code and master of words and puns!";
+        int health = 150;
+        Move[] moveSet = new Move[]{pairProgram(), cleanCode(), question(), fixMaster()};
+        return new CharacterCreator(name, definition, health, moveSet);
+    }
+
+    public static Move pairProgram() {
+        String name = "Pair Programming";
+        String definition = "Double the coders, double the damage!";
+        int hitChance = 13;
+        int damage = 25;
+        return new Move(name, definition, hitChance, damage);
+    }
 
     public String getName() {
         return this.name;
@@ -48,5 +62,9 @@ public class CharacterCreator {
 
     public Move[] getMoveSet() {
         return this.moveSet;
+    }
+
+    public void setHealth(int damage) {
+        this.health -= damage;
     }
 }

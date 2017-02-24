@@ -16,7 +16,8 @@ public class GUI {
         Move[] moveSet= new Move[]{basicAdam, basicDavid, meh, die};
         CharacterCreator userCharacter = new CharacterCreator(userName, userIntro, 100, moveSet);
         System.out.println("Your name is " + userCharacter.getName() + ".\nYour health is " + userCharacter.getHealth() + "!\n");
-        System.out.println("Your known moves are: " +moveSet.toString());//+ userCharacter.getMoveSet()[0].getMoveName() + ", "+ userCharacter.getMoveSet()[1].getMoveName() + ", "+ userCharacter.getMoveSet()[2].getMoveName() + ", "+ userCharacter.getMoveSet()[3].getMoveName());
+        System.out.println("Your known moves are: "+ userCharacter.getMoveSet()[0].getMoveName() + ", "+ userCharacter.getMoveSet()[1].getMoveName() +
+                ", "+ userCharacter.getMoveSet()[2].getMoveName() + ", and "+ userCharacter.getMoveSet()[3].getMoveName() + "!");
     }
 }
   //  public CharacterCreator(String characterName, String characterIntro, int characterHealth, Move[] characterMoveSet)

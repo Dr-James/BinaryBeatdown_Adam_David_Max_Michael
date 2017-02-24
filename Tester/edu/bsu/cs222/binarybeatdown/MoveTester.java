@@ -3,8 +3,6 @@ package edu.bsu.cs222.binarybeatdown;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static edu.bsu.cs222.binarybeatdown.Move.generateMoveArray;
-
 public class MoveTester {
 
     private Move nullMove = new Move();
@@ -49,17 +47,6 @@ public class MoveTester {
     public void basicMoveDamageTester() {
         Assert.assertEquals(95, basicMove.getMoveDamage());
     }
-
-//    @Test
-//    public void moveArrayTester() {
-//        Move basicAdam = new Move();
-//        Move basicDavid = new Move();
-//        Move meh = new Move();
-//        Move die = new Move();
-//        Move[] moveSet= new Move[]{basicAdam, basicDavid, meh, die};
-//        Assert.assertArrayEquals(moveSet, generateMoveArray());
-//    }
-
 
 
 }

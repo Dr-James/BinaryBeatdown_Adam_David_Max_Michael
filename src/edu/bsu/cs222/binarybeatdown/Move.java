@@ -38,18 +38,5 @@ public class Move {
         return this.damage;
     }
 
-//    public static Move[] generateMoveArray() {
-//        Move basicAdam = new Move();
-//        Move basicDavid = new Move();
-//        Move meh = new Move();
-//        Move die = new Move();
-//        return new Move[]{basicAdam, basicDavid, meh, die};
-//    }
-    public String toString(Move[] moveSet) {
-        String listOfMoves = "";
-        for (Move move: moveSet)
-            listOfMoves += move.getMoveName() + " ";
-        return listOfMoves;
-    }
 
 }
