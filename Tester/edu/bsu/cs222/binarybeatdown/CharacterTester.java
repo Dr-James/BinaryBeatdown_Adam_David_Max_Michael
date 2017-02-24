@@ -3,6 +3,8 @@ package edu.bsu.cs222.binarybeatdown;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.generateOppenentArray;
+
 public class CharacterTester {
 
     private CharacterCreator nullCharacter = new CharacterCreator();
@@ -67,24 +69,16 @@ public class CharacterTester {
         Assert.assertEquals("Moves: Nothing, Nothing, Nothing, Nothing", createPaul().getMoveSet());
     }
 
-//    @Test
-//    public void generatePlayableCharacterArrayTester() {
-//        CharacterCreator[] arrayOfCharacters = generatePlayableCharacterArray();
-//        CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator Michael = new CharacterCreator("Michael", "I'm Michael!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        Assert.assertArrayEquals(new CharacterCreator[]{Adam, David, Max, Michael}, arrayOfCharacters);
-//    }
-//
-//    @Test
-//    public void generateOpponentArrayTester() {
-//        CharacterCreator[] arrayOfOpponents = generateOpponentArray();
-//        CharacterCreator Dave = new CharacterCreator("Dave", "I'm Dave Largent!", "Clean Code", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator Jeff = new CharacterCreator("Jeff", "I'm Jeff Zhang!", "Whatever We Want", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator Nicolas = new CharacterCreator("Nicolas", "I'm Nicolas Renet!", "Algorithm", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        CharacterCreator Mystery = new CharacterCreator("Mr. E", "I'm Mr. E!", "Depends on who we pick", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-//        Assert.assertArrayEquals(new CharacterCreator[]{Dave, Jeff, Nicolas, Mystery}, arrayOfOpponents);
-//    }
+    @Test
+    public void generateOpponentArrayTester() {
+        CharacterCreator[] arrayOfCharacters = generateOppenentArray();
+        CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        CharacterCreator Michael = new CharacterCreator("Michael", "I'm Michael!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
+        Assert.assertEquals(Adam.getName(), arrayOfCharacters[0].getName());
+    }
+
+
 
 }

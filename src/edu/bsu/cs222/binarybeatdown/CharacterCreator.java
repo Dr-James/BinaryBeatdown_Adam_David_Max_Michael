@@ -35,7 +35,7 @@ public class CharacterCreator {
         this.moveSet = characterMoveSet;
     }
 
-    public CharacterCreator[] generatePlayableCharacterArray() {
+    public static CharacterCreator[] generateOppenentArray() {
         CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
@@ -43,19 +43,13 @@ public class CharacterCreator {
         return new CharacterCreator[]{Adam, David, Max, Michael};
     }
 
-    protected CharacterCreator[] generateOpponentArray() {
-        CharacterCreator Dave = new CharacterCreator("Dave", "I'm Dave Largent!", "Clean Code", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator Jeff = new CharacterCreator("Jeff", "I'm Jeff Zhang!", "Whatever We Want", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator Nicolas = new CharacterCreator("Nicolas", "I'm Nicolas Renet!", "Algorithm", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        CharacterCreator Mystery = new CharacterCreator("Mr. E", "I'm Mr. E!", "Depends on who we pick", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
-        return  new CharacterCreator[]{Dave, Jeff, Nicolas, Mystery};
-    }
+
 
     public String getName() {
         return this.name;
     }
 
-    public String getIntro(){
+    public String getIntro() {
         return this.intro;
     }
 
