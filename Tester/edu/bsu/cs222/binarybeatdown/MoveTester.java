@@ -1,4 +1,5 @@
-import edu.bsu.cs222.binarybeatdown.Move;
+package edu.bsu.cs222.binarybeatdown;
+
 import org.junit.Assert;
 import org.junit.Test;
 
