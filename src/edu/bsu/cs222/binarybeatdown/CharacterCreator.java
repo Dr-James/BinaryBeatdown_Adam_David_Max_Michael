@@ -35,7 +35,7 @@ public class CharacterCreator {
         this.moveSet = characterMoveSet;
     }
 
-    public static CharacterCreator[] generateOppenentArray() {
+    public static CharacterCreator[] generateOpponentArray() {
         CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});

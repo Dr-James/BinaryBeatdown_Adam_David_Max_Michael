@@ -3,7 +3,7 @@ package edu.bsu.cs222.binarybeatdown;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static edu.bsu.cs222.binarybeatdown.CharacterCreator.generateOppenentArray;
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.generateOpponentArray;
 
 public class CharacterTester {
 
@@ -71,7 +71,7 @@ public class CharacterTester {
 
     @Test
     public void generateOpponentArrayTester() {
-        CharacterCreator[] arrayOfCharacters = generateOppenentArray();
+        CharacterCreator[] arrayOfCharacters = generateOpponentArray();
         CharacterCreator Adam = new CharacterCreator("Adam", "I'm Adam!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator David = new CharacterCreator("David", "I'm David!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
         CharacterCreator Max = new CharacterCreator("Max", "I'm Max!", "Student", 100, 75, new Move[]{new Move(), new Move(), new Move(), new Move()});
