@@ -69,4 +69,35 @@ public class Battle {
     }
     //ending of Dave's sets of moves
 
+    public static Move throwComputer(){
+        String name = "Throw Computer";
+        String definition = "You become so frustrated, you throw your computer!";
+        int hitChance = 1;
+        int damage = 25;
+        return new Move(name, definition, hitChance, damage);
+    }
+
+    public static Move quickSort(){
+        String name = "Quick Sort";
+        String definition = "You quickly sort your thoughts, and attack!";
+        int hitChance = 20;
+        int damage = 5;
+        return new Move(name, definition, hitChance, damage);
+    }
+
+    public static Move deleteCode(){
+        String name = "Delete Code";
+        String definition = "You delete some of your opponents code!";
+        int hitChance = 15;
+        int damage = 5;
+        return new Move(name, definition, hitChance, damage);
+    }
+
+    public static Move pushCode(){
+        String name = "Push Code";
+        String definition = "You push some of your opponents code to GitHub... it ruins their code!";
+        int hitChance = 10;
+        int damage = 15;
+        return new Move(name, definition,  hitChance, damage);
+    }
 }
