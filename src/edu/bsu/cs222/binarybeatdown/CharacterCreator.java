@@ -1,5 +1,7 @@
 package edu.bsu.cs222.binarybeatdown;
 
+import java.util.Random;
+
 import static edu.bsu.cs222.binarybeatdown.Battle.*;
 
 public class CharacterCreator {
@@ -41,7 +43,13 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
-
+    public void attack(Move attack, CharacterCreator opponent) {
+        Random random = new Random();
+        int roll = random.nextInt(20) + 1;
+        if (roll >= attack.getMoveHitChance()) {
+            opponent.setHealth(attack.getMoveDamage());
+        }
+    }
 
     public String getName() {
         return this.name;
@@ -62,4 +70,6 @@ public class CharacterCreator {
     public void setHealth(int damage) {
         this.health -= damage;
     }
+
+
 }
