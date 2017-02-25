@@ -8,7 +8,6 @@ public class CharacterCreator {
 
     private String intro;
     private String name;
-    //private ImageInputStream picture;
     private int health;
     private Move[] moveSet;
 
