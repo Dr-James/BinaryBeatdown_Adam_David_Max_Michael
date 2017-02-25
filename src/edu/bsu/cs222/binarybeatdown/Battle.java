@@ -8,13 +8,15 @@ public class Battle {
     public static void battle(CharacterCreator user, CharacterCreator opponent) {
         Scanner in = new Scanner(System.in);
         int turnNumber = 1;
+        System.out.println(user.getName() + "'s health is: " + user.getHealth());
+        System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
         while (user.getHealth() > 0 && opponent.getHealth() > 0) {
-            System.out.println("Turn " + turnNumber);
+            System.out.println("**************Turn " + turnNumber + "******************");
             moveSelectAndAttack(user, opponent);
             if (opponent.getHealth() > 0)
                 moveSelectAndAttack(opponent, user);
-            System.out.println("User health is: " + user.getHealth());
-            System.out.println("Opponent health is: " + opponent.getHealth());
+            System.out.println(user.getName() + "'s health is: " + user.getHealth());
+            System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
             turnNumber++;
         }
         if (user.getHealth() <= 0)
@@ -28,7 +30,9 @@ public class Battle {
     private static void moveSelectAndAttack(CharacterCreator player1, CharacterCreator player2) {
         Random random = new Random();
         int roll = random.nextInt(3);
-        player1.attack(player1.getMoveSet()[roll], player2);
+        Move attackMove = player1.getMoveSet()[roll];
+        player1.attack(attackMove, player2);
+        System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
     }
 
     //Dave's Set of Moves
