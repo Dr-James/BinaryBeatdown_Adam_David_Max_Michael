@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import static edu.bsu.cs222.binarybeatdown.Battle.battle;
 import static edu.bsu.cs222.binarybeatdown.CharacterCreator.initializeDave;
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.initializeUser;
 
 public class GUI {
 
@@ -19,15 +20,22 @@ public class GUI {
 
 
 
-    private static CharacterCreator userSystemOut(String userName) {
-        String userIntro = "I'm " + userName;
-        Move[] moveSet= new Move[]{new Move(), new Move(), new Move(), new Move()};
-        CharacterCreator userCharacter = new CharacterCreator(userName, userIntro, 100, moveSet);
-        System.out.println("Your name is " + userCharacter.getName() + ".\nYour health is " + userCharacter.getHealth() + "!");
-        System.out.println("Your known moves are: "+ userCharacter.getMoveSet()[0].getMoveName() + ", "+ userCharacter.getMoveSet()[1].getMoveName() +
-                ", "+ userCharacter.getMoveSet()[2].getMoveName() + ", and "+ userCharacter.getMoveSet()[3].getMoveName() + "!\n");
-        return userCharacter;
+    private static CharacterCreator userSystemOut(String userName){
+        CharacterCreator user = initializeUser(userName);
+        System.out.println(user.getIntro());
+        System.out.println("Your known moves are: " + user.getMoveSet()[0].getMoveName() + ", "+ user.getMoveSet()[1].getMoveName() +
+                ", "+ user.getMoveSet()[2].getMoveName() + ", and "+ user.getMoveSet()[3].getMoveName() + "!\n");
+        return user;
     }
+//    private static CharacterCreator userSystemOut(String userName) {
+//        String userIntro = "I'm " + userName;
+//        Move[] moveSet= new Move[]{new Move(), new Move(), new Move(), new Move()};
+//        CharacterCreator userCharacter = new CharacterCreator(userName, userIntro, 100, moveSet);
+//        System.out.println("Your name is " + userCharacter.getName() + ".\nYour health is " + userCharacter.getHealth() + "!");
+//        System.out.println("Your known moves are: "+ userCharacter.getMoveSet()[0].getMoveName() + ", "+ userCharacter.getMoveSet()[1].getMoveName() +
+//                ", "+ userCharacter.getMoveSet()[2].getMoveName() + ", and "+ userCharacter.getMoveSet()[3].getMoveName() + "!\n");
+//        return userCharacter;
+//    }
 
     private static CharacterCreator daveSystemOut() {
         CharacterCreator Dave = initializeDave();
