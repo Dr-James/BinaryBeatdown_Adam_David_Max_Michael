@@ -42,6 +42,14 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
+    public static CharacterCreator initializeUser(String userName){
+        String name  = userName;
+        String definition = "You, " + userName + " are the next BB challenger!";
+        int health = 150;
+        Move[] moveSet = new Move[]{throwComputer(), pushCode(), deleteCode(), quickSort()};
+        return new CharacterCreator(name, definition, health, moveSet);
+    }
+
     public void attack(Move attack, CharacterCreator opponent) {
         Random random = new Random();
         int roll = random.nextInt(20) + 1;
