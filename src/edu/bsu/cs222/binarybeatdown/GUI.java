@@ -27,15 +27,6 @@ public class GUI {
                 ", "+ user.getMoveSet()[2].getMoveName() + ", and "+ user.getMoveSet()[3].getMoveName() + "!\n");
         return user;
     }
-//    private static CharacterCreator userSystemOut(String userName) {
-//        String userIntro = "I'm " + userName;
-//        Move[] moveSet= new Move[]{new Move(), new Move(), new Move(), new Move()};
-//        CharacterCreator userCharacter = new CharacterCreator(userName, userIntro, 100, moveSet);
-//        System.out.println("Your name is " + userCharacter.getName() + ".\nYour health is " + userCharacter.getHealth() + "!");
-//        System.out.println("Your known moves are: "+ userCharacter.getMoveSet()[0].getMoveName() + ", "+ userCharacter.getMoveSet()[1].getMoveName() +
-//                ", "+ userCharacter.getMoveSet()[2].getMoveName() + ", and "+ userCharacter.getMoveSet()[3].getMoveName() + "!\n");
-//        return userCharacter;
-//    }
 
     private static CharacterCreator daveSystemOut() {
         CharacterCreator Dave = initializeDave();

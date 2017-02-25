@@ -44,7 +44,7 @@ public class CharacterCreator {
 
     public static CharacterCreator initializeUser(String userName){
         String name  = userName;
-        String definition = "You, " + userName + " are the next BB challenger!";
+        String definition = "You, " + userName + ", are the next Binary Beatdown challenger!";
         int health = 150;
         Move[] moveSet = new Move[]{throwComputer(), pushCode(), deleteCode(), quickSort()};
         return new CharacterCreator(name, definition, health, moveSet);

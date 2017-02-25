@@ -3,6 +3,8 @@ package edu.bsu.cs222.binarybeatdown;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.lang.Integer.valueOf;
+
 public class Battle {
 
     public static void battle(CharacterCreator user, CharacterCreator opponent) {
@@ -12,9 +14,12 @@ public class Battle {
         System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
         while (user.getHealth() > 0 && opponent.getHealth() > 0) {
             System.out.println("**************Turn " + turnNumber + "******************");
-            moveSelectAndAttack(user, opponent);
+            System.out.println("Choose an attack!");
+            Scanner attackChoice = new Scanner(System.in);
+            int attack = attackChoice.nextInt();
+            chooseMoveAndAttack(user, opponent, attack);
             if (opponent.getHealth() > 0)
-                moveSelectAndAttack(opponent, user);
+                randomMoveSelectAndAttack(opponent, user);
             System.out.println(user.getName() + "'s health is: " + user.getHealth());
             System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
             turnNumber++;
@@ -27,10 +32,16 @@ public class Battle {
 
     //this is temporary for random battle move selection, it will need to be removed
     //player1 attacks player2
-    private static void moveSelectAndAttack(CharacterCreator player1, CharacterCreator player2) {
+    private static void randomMoveSelectAndAttack(CharacterCreator player1, CharacterCreator player2) {
         Random random = new Random();
         int roll = random.nextInt(3);
         Move attackMove = player1.getMoveSet()[roll];
+        player1.attack(attackMove, player2);
+        System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
+    }
+
+    public static void chooseMoveAndAttack(CharacterCreator player1, CharacterCreator player2, int attack){
+        Move attackMove = player1.getMoveSet()[attack];
         player1.attack(attackMove, player2);
         System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
     }
