@@ -125,4 +125,12 @@ public class Battle {
         int damage = 15;
         return new Move(name, definition,  hitChance, damage);
     }
+
+    public static Move  aptGet() {
+        String name = "apt-get";
+        String definition = "You apt-get upgrade, surpassing your opponents!";
+        int hitChance = 8;
+        int damage = 18;
+        return new Move(name, definition,  hitChance, damage);
+    }
 }
