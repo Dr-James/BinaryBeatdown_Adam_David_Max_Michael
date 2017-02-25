@@ -12,10 +12,7 @@ public class Battle {
         characterHealthStatus(user, opponent);
         while (user.getHealth() > 0 && opponent.getHealth() > 0) {
             System.out.println("**************Turn " + turnNumber + "******************");
-            chooseMoveAndAttack(user, opponent);
-            if (opponent.getHealth() > 0)
-                randomMoveSelectAndAttack(opponent, user);
-            characterHealthStatus(user, opponent);
+            turnBasedAttacks(user, opponent);
             turnNumber++;
         }
         battleEndStatus(user);
@@ -29,6 +26,13 @@ public class Battle {
         Move attackMove = player1.getMoveSet()[roll];
         player1.attack(attackMove, player2);
         System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
+    }
+
+    private static void turnBasedAttacks(CharacterCreator user, CharacterCreator opponent) {
+        chooseMoveAndAttack(user, opponent);
+        if (opponent.getHealth() > 0)
+            randomMoveSelectAndAttack(opponent, user);
+        characterHealthStatus(user, opponent);
     }
 
     public static void chooseMoveAndAttack(CharacterCreator player1, CharacterCreator player2){
