@@ -8,26 +8,17 @@ import static java.lang.Integer.valueOf;
 public class Battle {
 
     public static void battle(CharacterCreator user, CharacterCreator opponent) {
-        Scanner in = new Scanner(System.in);
         int turnNumber = 1;
-        System.out.println(user.getName() + "'s health is: " + user.getHealth());
-        System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
+        characterHealthStatus(user, opponent);
         while (user.getHealth() > 0 && opponent.getHealth() > 0) {
             System.out.println("**************Turn " + turnNumber + "******************");
-            System.out.println("Choose an attack!");
-            Scanner attackChoice = new Scanner(System.in);
-            int attack = attackChoice.nextInt();
-            chooseMoveAndAttack(user, opponent, attack);
+            chooseMoveAndAttack(user, opponent);
             if (opponent.getHealth() > 0)
                 randomMoveSelectAndAttack(opponent, user);
-            System.out.println(user.getName() + "'s health is: " + user.getHealth());
-            System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
+            characterHealthStatus(user, opponent);
             turnNumber++;
         }
-        if (user.getHealth() <= 0)
-            System.out.println("You've lost all of your health, and are eliminated from the Binary Beatdown!");
-        else
-            System.out.println("You have defeated your opponent, and move to the next round of the Binary Beatdown!");
+        battleEndStatus(user);
     }
 
     //this is temporary for random battle move selection, it will need to be removed
@@ -40,10 +31,29 @@ public class Battle {
         System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
     }
 
-    public static void chooseMoveAndAttack(CharacterCreator player1, CharacterCreator player2, int attack){
+    public static void chooseMoveAndAttack(CharacterCreator player1, CharacterCreator player2){
+        int attack = selectAttack();
         Move attackMove = player1.getMoveSet()[attack];
         player1.attack(attackMove, player2);
         System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
+    }
+
+    private static int selectAttack() {
+        System.out.println("Choose an attack!");
+        Scanner attackChoice = new Scanner(System.in);
+        return attackChoice.nextInt();
+    }
+
+    private static void characterHealthStatus(CharacterCreator user, CharacterCreator opponent) {
+        System.out.println(user.getName() + "'s health is: " + user.getHealth());
+        System.out.println(opponent.getName() + "'s health is: " + opponent.getHealth());
+    }
+
+    private static void battleEndStatus(CharacterCreator user) {
+        if (user.getHealth() <= 0)
+            System.out.println("You've lost all of your health, and are eliminated from the Binary Beatdown!");
+        else
+            System.out.println("You have defeated your opponent, and move to the next round of the Binary Beatdown!");
     }
 
     //Dave's Set of Moves
