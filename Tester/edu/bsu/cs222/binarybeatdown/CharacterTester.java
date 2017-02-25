@@ -4,18 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static edu.bsu.cs222.binarybeatdown.CharacterCreator.generateOpponentArray;
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.initializeDave;
 
 public class CharacterTester {
 
     private CharacterCreator nullCharacter = new CharacterCreator();
-
-    private CharacterCreator createPaul() {
-        String name = "Paul";
-        String intro = "I am Paul!";
-        int health = 150;
-        Move[] moveSet = {new Move(), new Move(), new Move(), new Move()};
-        return new CharacterCreator(name, intro, health, moveSet);
-    }
 
     @Test
     public void characterNoNameTester() {
@@ -39,24 +32,26 @@ public class CharacterTester {
     }
 
     @Test
-    public void paulNameTester() {
-        Assert.assertEquals("Paul", createPaul().getName());
+    public void daveNameTester() {
+        Assert.assertEquals("Dave", initializeDave().getName());
     }
 
     @Test
-    public void paulIntroTester() {
-        Assert.assertEquals("I am Paul!", createPaul().getIntro());
+    public void daveIntroTester() {
+        Assert.assertEquals("I'm Professor Dave Largent, champion of clean code and master of words and puns!", initializeDave().getIntro());
     }
 
 
     @Test
-    public void paulStatsTester() {
-        Assert.assertEquals(150, createPaul().getHealth());
+    public void daveHealthTester() {
+        Assert.assertEquals(150, initializeDave().getHealth());
     }
 
     @Test
-    public void paulMoveSetTester() {
-        Assert.assertEquals("Moves: Nothing, Nothing, Nothing, Nothing", createPaul().getMoveSet());
+    public void daveMoveSetTester() {
+        CharacterCreator dave = initializeDave();
+        String daveMoves = dave.getMoveSet()[0].getMoveName() + ", " + dave.getMoveSet()[1].getMoveName() + ", " + dave.getMoveSet()[2].getMoveName() + ", " + dave.getMoveSet()[3].getMoveName();
+        Assert.assertEquals("Pair Programming, Clean Code, Question, Fix It", daveMoves);
     }
 
     @Test
