@@ -24,8 +24,7 @@ public class Battle {
         Random random = new Random();
         int roll = random.nextInt(3);
         Move attackMove = player1.getMoveSet()[roll];
-        player1.attack(attackMove, player2);
-        System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
+        player1.declareHitOrMiss(attackMove, player1, player2);
     }
 
     private static void turnBasedAttacks(CharacterCreator user, CharacterCreator opponent) {
@@ -38,8 +37,7 @@ public class Battle {
     public static void chooseMoveAndAttack(CharacterCreator player1, CharacterCreator player2){
         int attack = selectAttack();
         Move attackMove = player1.getMoveSet()[attack];
-        player1.attack(attackMove, player2);
-        System.out.println(player1.getName() + " used " + attackMove.getMoveName() + "!");
+        player1.declareHitOrMiss(attackMove, player1,  player2);
     }
 
     private static int selectAttack() {
@@ -104,7 +102,7 @@ public class Battle {
 
     public static Move quickSort(){
         String name = "Quick Sort";
-        String definition = "You quickly sort your thoughts, and attack!";
+        String definition = "You quickly sort your thoughts, and dealAttackDamage!";
         int hitChance = 20;
         int damage = 5;
         return new Move(name, definition, hitChance, damage);

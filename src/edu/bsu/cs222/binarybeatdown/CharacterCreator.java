@@ -50,12 +50,25 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
-    public void attack(Move attack, CharacterCreator opponent) {
+    public void dealAttackDamage(Move attack, CharacterCreator opponent) {
+            opponent.setHealth(attack.getMoveDamage());
+    }
+
+    public boolean checkIfHit(Move attack){
         Random random = new Random();
         int roll = random.nextInt(20) + 1;
-        if (roll >= attack.getMoveHitChance()) {
-            opponent.setHealth(attack.getMoveDamage());
-        }
+        if (roll >= attack.getMoveHitChance())
+            return true;
+        else
+            return false;
+    }
+
+    public void declareHitOrMiss(Move attack, CharacterCreator user, CharacterCreator opponent){
+        System.out.println(user.getName() + " used " + attack.getMoveName() + "!");
+        if (checkIfHit(attack))
+            dealAttackDamage(attack, opponent);
+        else
+            System.out.println("The attack misses!");
     }
 
     public String getName() {

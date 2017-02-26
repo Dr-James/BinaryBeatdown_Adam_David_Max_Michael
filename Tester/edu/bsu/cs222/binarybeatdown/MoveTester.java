@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MoveTester {
 
     private Move nullMove = new Move();
-    private Move basicMove = new Move("Basic", "This is a basic attack!", 10, 95);
+    private Move basicMove = new Move("Basic", "This is a basic dealAttackDamage!", 10, 95);
 
     @Test
     public void nullMoveNameTester() {
@@ -35,7 +35,7 @@ public class MoveTester {
 
     @Test
     public void basicMoveDefinitionTester() {
-        Assert.assertEquals("This is a basic attack!", basicMove.getMoveDefinition());
+        Assert.assertEquals("This is a basic dealAttackDamage!", basicMove.getMoveDefinition());
     }
 
     @Test
