@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MoveTester {
 
     private Move nullMove = new Move();
-    private Move basicMove = new Move("Basic", "This is a basic dealAttackDamage!", 10, 95);
+    private Move basicMove = new Move("Basic", "This is a basic dealAttackDamage!", 10, 95, "Loss");
 
     @Test
     public void nullMoveNameTester() {

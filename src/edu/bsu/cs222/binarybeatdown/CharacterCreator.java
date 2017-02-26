@@ -46,12 +46,15 @@ public class CharacterCreator {
         String name  = userName;
         String definition = "You, " + userName + ", are the next Binary Beatdown challenger!";
         int health = 150;
-        Move[] moveSet = new Move[]{throwComputer(), pushCode(), deleteCode(), quickSort()};
+        Move[] moveSet = new Move[]{throwComputer(), pushCode(), deleteCode(), eatSnack()};
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
-    public void dealAttackDamage(Move attack, CharacterCreator opponent) {
-            opponent.setHealth(attack.getMoveDamage());
+    public void dealAttackDamage(Move attack, CharacterCreator user, CharacterCreator opponent) {
+            if( attack.getMoveDamageType() == "Lose")
+                opponent.setHealth(attack.getMoveDamage(), "Lose");
+            else
+                user.setHealth(attack.getMoveDamage(), "Gain");
     }
 
     public boolean checkIfHit(Move attack){
@@ -66,7 +69,7 @@ public class CharacterCreator {
     public void declareHitOrMiss(Move attack, CharacterCreator user, CharacterCreator opponent){
         System.out.println(user.getName() + " used " + attack.getMoveName() + "!");
         if (checkIfHit(attack))
-            dealAttackDamage(attack, opponent);
+            dealAttackDamage(attack, user, opponent);
         else
             System.out.println("The attack misses!");
     }
@@ -87,8 +90,11 @@ public class CharacterCreator {
         return this.moveSet;
     }
 
-    public void setHealth(int damage) {
-        this.health -= damage;
+    public void setHealth(int size, String damageType ) {
+        if (damageType == "Lose")
+            this.health -= size;
+        else
+            this.health += size;
     }
 
 

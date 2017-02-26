@@ -64,7 +64,8 @@ public class Battle {
         String definition = "Double the coders, double the damage!";
         int hitChance = 13;
         int damage = 25;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move cleanCode() {
@@ -72,7 +73,8 @@ public class Battle {
         String definition = "Clean code is beautiful. Cleaning code is pain.";
         int hitChance = 8;
         int damage = 15;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move question() {
@@ -80,7 +82,8 @@ public class Battle {
         String definition = "Sometimes questions can find you at a loss!";
         int hitChance = 5;
         int damage = 12;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move fixMaster() {
@@ -88,7 +91,8 @@ public class Battle {
         String definition = "Fixing your issues is helpful, but shames you!";
         int hitChance = 5;
         int damage = 10;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
     //ending of Dave's sets of moves
 
@@ -97,7 +101,8 @@ public class Battle {
         String definition = "You become so frustrated, you throw your computer!";
         int hitChance = 1;
         int damage = 25;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move quickSort(){
@@ -105,7 +110,8 @@ public class Battle {
         String definition = "You quickly sort your thoughts, and dealAttackDamage!";
         int hitChance = 20;
         int damage = 5;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move deleteCode(){
@@ -113,7 +119,8 @@ public class Battle {
         String definition = "You delete some of your opponents code!";
         int hitChance = 15;
         int damage = 5;
-        return new Move(name, definition, hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 
     public static Move pushCode(){
@@ -121,7 +128,8 @@ public class Battle {
         String definition = "You push some of your opponents code to GitHub... it ruins their code!";
         int hitChance = 10;
         int damage = 15;
-        return new Move(name, definition,  hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition,  hitChance, damage, damageType);
     }
 
     public static Move  aptGet() {
@@ -129,6 +137,16 @@ public class Battle {
         String definition = "You apt-get upgrade, surpassing your opponents!";
         int hitChance = 8;
         int damage = 18;
-        return new Move(name, definition,  hitChance, damage);
+        String damageType = "Lose";
+        return new Move(name, definition,  hitChance, damage, damageType);
+    }
+
+    public static Move eatSnack(){
+        String name = "Eat Snack";
+        String definition = "You eat a snack, and feel reinvigorated!";
+        int hitChance = 1;
+        int damage = 15;
+        String damageType = "Gain";
+        return new Move(name, definition, hitChance, damage, damageType);
     }
 }
