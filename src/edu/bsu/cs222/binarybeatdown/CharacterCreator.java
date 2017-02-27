@@ -1,6 +1,6 @@
 package edu.bsu.cs222.binarybeatdown;
 
-import static edu.bsu.cs222.binarybeatdown.Battle.*;
+import static edu.bsu.cs222.binarybeatdown.MoveSuite.*;
 
 public class CharacterCreator {
 
@@ -64,6 +64,13 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
+    public static CharacterCreator initializeMichael() {
+        String name = "Michael";
+        String definition = "I'm Michael, the Noonja. My physical capabilities combined with my coding skills make me a formidable opponent.";
+        int health = 150;
+        Move[] moveSet = new Move[]{cardiacArrest(), dualBootBarrage(), hibernate(), scissorKick()};
+        return new CharacterCreator(name, definition, health, moveSet);
+    }
 
     public String getName() {
         return this.name;
