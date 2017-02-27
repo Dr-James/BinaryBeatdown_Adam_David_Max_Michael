@@ -1,7 +1,5 @@
 package edu.bsu.cs222.binarybeatdown;
 
-import java.util.Random;
-
 import static edu.bsu.cs222.binarybeatdown.Battle.*;
 
 public class CharacterCreator {
@@ -34,14 +32,6 @@ public class CharacterCreator {
         return new CharacterCreator[]{Adam, David, Max, Michael};
     }
 
-    public static CharacterCreator initializeDave() {
-        String name = "Dave";
-        String definition = "I'm Professor Dave Largent, champion of clean code and master of words and puns!";
-        int health = 150;
-        Move[] moveSet = new Move[]{pairProgram(), cleanCode(), question(), fixMaster()};
-        return new CharacterCreator(name, definition, health, moveSet);
-    }
-
     public static CharacterCreator initializeUser(String userName){
         String name  = userName;
         String definition = "You, " + userName + ", are the next Binary Beatdown challenger!";
@@ -50,29 +40,30 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
-    public void dealAttackDamage(Move attack, CharacterCreator user, CharacterCreator opponent) {
-            if( attack.getMoveDamageType() == "Lose")
-                opponent.setHealth(attack.getMoveDamage(), "Lose");
-            else
-                user.setHealth(attack.getMoveDamage(), "Gain");
+    public static CharacterCreator initializeAdam() {
+        String name = "Adam";
+        String definition = "I'm Adam, an expert Mathematician and Computer Scientist. But watch out, I have a temper! When I gets angry... I GETS ANGRY!";
+        int health = 150;
+        Move[] moveSet = new Move[]{deleteCode(), throwComputer(), pushCode(), quickSort()};
+        return new CharacterCreator(name, definition, health, moveSet);
     }
 
-    public boolean checkIfHit(Move attack){
-        Random random = new Random();
-        int roll = random.nextInt(20) + 1;
-        if (roll >= attack.getMoveHitChance())
-            return true;
-        else
-            return false;
+    public static CharacterCreator initializeDave() {
+        String name = "Dave";
+        String definition = "I'm Professor Dave Largent, champion of clean code and master of words and puns!";
+        int health = 150;
+        Move[] moveSet = new Move[]{pairProgram(), cleanCode(), question(), fixMaster()};
+        return new CharacterCreator(name, definition, health, moveSet);
     }
 
-    public void declareHitOrMiss(Move attack, CharacterCreator user, CharacterCreator opponent){
-        System.out.println(user.getName() + " used " + attack.getMoveName() + "!");
-        if (checkIfHit(attack))
-            dealAttackDamage(attack, user, opponent);
-        else
-            System.out.println("The attack misses!");
+    public static CharacterCreator initializeDavid() {
+        String name = "David";
+        String definition = "I'm David, a wise-crack, coffee-powered coder. My room is clean, and so is my code. If you.WantToLose() == true, come at me!";
+        int health = 150;
+        Move[] moveSet = new Move[]{aptGet(), drinkCoffee(), solveAlgorithm(), refactor()};
+        return new CharacterCreator(name, definition, health, moveSet);
     }
+
 
     public String getName() {
         return this.name;
@@ -91,7 +82,7 @@ public class CharacterCreator {
     }
 
     public void setHealth(int size, String damageType ) {
-        if (damageType == "Lose")
+        if (damageType.equals("subHealth"))
             this.health -= size;
         else
             this.health += size;

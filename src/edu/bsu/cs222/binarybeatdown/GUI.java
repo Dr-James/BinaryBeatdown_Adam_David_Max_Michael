@@ -14,7 +14,6 @@ public class GUI extends Application {
 
 
     @Override
-
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Binary Beatdown");
 
