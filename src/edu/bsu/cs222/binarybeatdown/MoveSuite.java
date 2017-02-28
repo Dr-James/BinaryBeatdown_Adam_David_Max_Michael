@@ -127,7 +127,7 @@ public class MoveSuite {
     }
 
     public static Move fiveOClockMass() {
-        String name = "5:00 Mass";
+        String name = "5 o'clock Mass";
         String definition = "You drop to your knees, and through divine intervention regain health!";
         int hitChance = 3;
         int damage = 15;
