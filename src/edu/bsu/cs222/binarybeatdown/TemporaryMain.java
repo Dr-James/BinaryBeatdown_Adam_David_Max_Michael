@@ -23,8 +23,8 @@ public class TemporaryMain {
     private static CharacterCreator userSystemOut(String userName) {
         CharacterCreator user = initializeUser(userName);
         System.out.println(user.getIntro());
-        System.out.println("Your known moves are: " + user.getMoveSet()[0].getMoveName() + ", " + user.getMoveSet()[1].getMoveName() +
-                ", " + user.getMoveSet()[2].getMoveName() + ", and " + user.getMoveSet()[3].getMoveName() + "!\n");
+        System.out.println("Your known moves are: " + user.getMoveSet()[0].getMoveName() + "(0), " + user.getMoveSet()[1].getMoveName() +
+                "(1), " + user.getMoveSet()[2].getMoveName() + "(2), and " + user.getMoveSet()[3].getMoveName() + "(3)!\n");
         return user;
     }
 

@@ -97,11 +97,11 @@ public class Battle {
 
     private static int battleEndStatus(CharacterCreator user) {
         if (user.getHealth() <= 0) {
-            System.out.println("You've lost all of your health, and are eliminated from the Binary Beatdown!");
+            System.out.println("You've lost all of your health, and are eliminated from the Binary Beatdown!\n");
             return 0;
         }
         else {
-            System.out.println("You have defeated your opponent, and move to the next round of the Binary Beatdown!");
+            System.out.println("You have defeated your opponent, and move to the next round of the Binary Beatdown!\n");
             return 1;
         }
     }

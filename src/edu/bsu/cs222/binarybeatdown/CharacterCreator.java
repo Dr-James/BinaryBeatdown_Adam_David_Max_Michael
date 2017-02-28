@@ -98,9 +98,15 @@ public class CharacterCreator {
 
     public void setHealth(int size, String damageType ) {
         if (damageType.equals("subHealth"))
-            this.health -= size;
+            subHealthCap(size);
         else
             addHealthCap(size);
+    }
+
+    private void subHealthCap(int size) {
+        this.health -= size;
+        if (this.getHealth() < 0)
+            this.health = 0;
     }
 
     private void addHealthCap(int size) {
