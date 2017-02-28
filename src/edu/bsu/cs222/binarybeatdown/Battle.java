@@ -2,10 +2,36 @@ package edu.bsu.cs222.binarybeatdown;
 
 import java.util.Random;
 import java.util.Scanner;
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.*;
 
 public class Battle {
 
-    static void battle(CharacterCreator user, CharacterCreator opponent) {
+    static void battle(CharacterCreator user) {
+        CharacterCreator Adam = initializeAdam();
+        CharacterCreator David = initializeDavid();
+        CharacterCreator Max = initializeMax();
+        CharacterCreator Michael = initializeMichael();
+        CharacterCreator Dave = initializeDave();
+        int firstBattle = battleRound(user, Adam);
+        if (firstBattle != 0) {
+            if (battleVsEnemy(user, David) != 0) {
+                if (battleVsEnemy(user, Max) != 0) {
+                    if (battleVsEnemy(user, Michael) != 0) {
+                        if (battleVsEnemy(user, Dave) != 0)
+                            System.out.println("You are the Binary Beatdown Champion!");
+                    }
+                }
+            }
+        }
+    }
+
+    static int battleVsEnemy(CharacterCreator user, CharacterCreator opponent) {
+        user.setHealth(150 - user.getHealth(), "addHealth");
+        System.out.println("************************FIGHT!*********************\n");
+        return battleRound(user, opponent);
+    }
+
+    static int battleRound(CharacterCreator user, CharacterCreator opponent) {
         int turnNumber = 1;
         characterHealthStatus(user, opponent);
         while (user.getHealth() > 0 && opponent.getHealth() > 0) {
@@ -13,7 +39,7 @@ public class Battle {
             turnBasedAttacks(user, opponent);
             turnNumber++;
         }
-        battleEndStatus(user);
+        return battleEndStatus(user);
     }
 
     private static void characterHealthStatus(CharacterCreator user, CharacterCreator opponent) {
@@ -69,11 +95,15 @@ public class Battle {
             user.setHealth(attack.getMoveDamage(), "addHealth");
     }
 
-    private static void battleEndStatus(CharacterCreator user) {
-        if (user.getHealth() <= 0)
+    private static int battleEndStatus(CharacterCreator user) {
+        if (user.getHealth() <= 0) {
             System.out.println("You've lost all of your health, and are eliminated from the Binary Beatdown!");
-        else
+            return 0;
+        }
+        else {
             System.out.println("You have defeated your opponent, and move to the next round of the Binary Beatdown!");
+            return 1;
+        }
     }
 
 }

@@ -2,10 +2,11 @@ package edu.bsu.cs222.binarybeatdown;
 
 import java.util.Scanner;
 
-import static edu.bsu.cs222.binarybeatdown.Battle.battle;
-import static edu.bsu.cs222.binarybeatdown.CharacterCreator.initializeDave;
-import static edu.bsu.cs222.binarybeatdown.CharacterCreator.initializeUser;
 
+import static edu.bsu.cs222.binarybeatdown.Battle.battle;
+import static edu.bsu.cs222.binarybeatdown.CharacterCreator.*;
+
+//temporary main to visualize output stream
 public class TemporaryMain {
 
     public static void main(String[] args) {
@@ -13,9 +14,10 @@ public class TemporaryMain {
         System.out.println("What is your name?");
         String userName = in.nextLine();
         CharacterCreator user = userSystemOut(userName);
-        CharacterCreator dave = daveSystemOut();
+        //CharacterCreator dave = daveSystemOut();
         System.out.println("************************FIGHT!*********************\n");
-        battle(user, dave);
+        //battleRound(user, dave);
+        battle(user);
     }
 
     private static CharacterCreator userSystemOut(String userName) {

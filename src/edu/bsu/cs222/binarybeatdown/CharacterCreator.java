@@ -58,7 +58,7 @@ public class CharacterCreator {
 
     public static CharacterCreator initializeDavid() {
         String name = "David";
-        String definition = "I'm David, a wise-crack, coffee-powered coder. My room is clean, and so is my code. If you.WantToLose() == true, come at me!";
+        String definition = "I'm David, a wise-crack, coffee-powered coder. My room is clean, and so is my code. If you.wantToLose() == true, come at me!";
         int health = 150;
         Move[] moveSet = new Move[]{aptGet(), drinkCoffee(), solveAlgorithm(), refactor()};
         return new CharacterCreator(name, definition, health, moveSet);
@@ -74,7 +74,7 @@ public class CharacterCreator {
 
     public static CharacterCreator initializeMichael() {
         String name = "Michael";
-        String definition = "I'm Michael, the Noonja. My physical capabilities combined with my coding skills make me a formidable opponent.";
+        String definition = "I'm Michael, the Noonja. My physical capabilities combined with my coding skills make me a formidable opponent!";
         int health = 150;
         Move[] moveSet = new Move[]{cardiacArrest(), dualBootBarrage(), hibernate(), scissorKick()};
         return new CharacterCreator(name, definition, health, moveSet);
