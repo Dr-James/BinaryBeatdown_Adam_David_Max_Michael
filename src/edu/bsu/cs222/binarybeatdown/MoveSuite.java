@@ -2,44 +2,6 @@ package edu.bsu.cs222.binarybeatdown;
 
 public class MoveSuite {
 
-    //Dave Moves
-    public static Move cleanCode() {
-        String name = "Clean Code";
-        String definition = "Clean code is beautiful. Cleaning code is pain.";
-        int hitChance = 8;
-        int damage = 15;
-        String damageType = "subHealth";
-        return new Move(name, definition, hitChance, damage, damageType);
-    }
-
-    public static Move fixMaster() {
-        String name = "Fix It";
-        String definition = "Fixing your issues is helpful, but shames you!";
-        int hitChance = 5;
-        int damage = 10;
-        String damageType = "subHealth";
-        return new Move(name, definition, hitChance, damage, damageType);
-    }
-
-    public static Move pairProgram() {
-        String name = "Pair Programming";
-        String definition = "Double the coders, double the damage!";
-        int hitChance = 13;
-        int damage = 25;
-        String damageType = "subHealth";
-        return new Move(name, definition, hitChance, damage, damageType);
-    }
-
-    public static Move question() {
-        String name = "Question";
-        String definition = "Sometimes questions can find you at a loss!";
-        int hitChance = 5;
-        int damage = 12;
-        String damageType = "subHealth";
-        return new Move(name, definition, hitChance, damage, damageType);
-    }
-    //End of Dave's sets of moves
-
     //Adam Moves
     public static Move deleteCode(){
         String name = "Delete Code";
@@ -78,6 +40,44 @@ public class MoveSuite {
     }
     //End of Adam's set of moves
 
+    //Dave Moves
+    public static Move cleanCode() {
+        String name = "Clean Code";
+        String definition = "Clean code is beautiful. Cleaning code is pain.";
+        int hitChance = 8;
+        int damage = 15;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move fixMaster() {
+        String name = "Fix It";
+        String definition = "Fixing your issues is helpful, but shames you!";
+        int hitChance = 5;
+        int damage = 10;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move pairProgram() {
+        String name = "Pair Programming";
+        String definition = "Double the coders, double the damage!";
+        int hitChance = 13;
+        int damage = 25;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move question() {
+        String name = "Question";
+        String definition = "Sometimes questions can find you at a loss!";
+        int hitChance = 5;
+        int damage = 12;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+    //End of Dave's sets of moves
+
     //David Moves
     public static Move  aptGet() {
         String name = "apt-get";
@@ -115,6 +115,44 @@ public class MoveSuite {
         return new Move(name, definition, hitChance, damage, damageType);
     }
     //End of David's set of moves
+
+    //Max Moves
+    public static Move buildRectangle() {
+        String name = "Build Rectangle";
+        String definition = "A move only known by GUI masters, this attack will knock your opponents flat on their back from the power of this awe-inspiring GUI four-sided strike!";
+        int hitChance = 6;
+        int damage = 10;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move fiveOClockMass() {
+        String name = "5:00 Mass";
+        String definition = "You drop to your knees, and through divine intervention regain health!";
+        int hitChance = 3;
+        int damage = 15;
+        String damageType = "addHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move forgetSyntax() {
+        String name = "Forget Syntax";
+        String definition = "You get quite confused, and may lose some health, but in your dazed state you manage to mess up your opponents code!";
+        int hitChance = 8;
+        int damage = 14;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+
+    public static Move openDonutBag() {
+        String name = "Open Donut Bag";
+        String definition = "With intense ferocity, you peel apart the top of the bag of donuts, and the shredded paper hits your enemy!";
+        int hitChance = 5;
+        int damage = 5;
+        String damageType = "subHealth";
+        return new Move(name, definition, hitChance, damage, damageType);
+    }
+    //End of Max's set of moves
 
     //Michael Moves
     public static Move cardiacArrest() {

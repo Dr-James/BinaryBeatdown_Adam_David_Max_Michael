@@ -64,6 +64,14 @@ public class CharacterCreator {
         return new CharacterCreator(name, definition, health, moveSet);
     }
 
+    public static CharacterCreator initializeMax() {
+        String name = "Max";
+        String definition = "I'm Max, a ...!";
+        int health = 150;
+        Move[] moveSet = new Move[]{buildRectangle(), fiveOClockMass(), forgetSyntax(), openDonutBag()};
+        return new CharacterCreator(name, definition, health, moveSet);
+    }
+
     public static CharacterCreator initializeMichael() {
         String name = "Michael";
         String definition = "I'm Michael, the Noonja. My physical capabilities combined with my coding skills make me a formidable opponent.";
@@ -92,7 +100,15 @@ public class CharacterCreator {
         if (damageType.equals("subHealth"))
             this.health -= size;
         else
+            addHealthCap(size);
+    }
+
+    private void addHealthCap(int size) {
+        if (this.getHealth() < 150) {
             this.health += size;
+            if (this.getHealth() > 150)
+                this.health = 150;
+        }
     }
 
 
